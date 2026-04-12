@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discord Communities — CreatorCommerce</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    img, svg, video { display: block; max-width: 100%; }
+    button { cursor: pointer; border: none; background: none; font: inherit; color: inherit; }
+    a { color: inherit; text-decoration: none; }
+
+    :root {
+      --bg: #F8F8F6; --surface: #fff; --dark: #0A0A0F;
+      --text: #111; --text-secondary: #555; --text-muted: #999; --text-inverse: #0A0A0F;
+      --accent: #C6F135; --accent-hover: #D4F85A; --accent-light: rgba(198,241,53,0.15);
+      --border: rgba(0,0,0,0.08);
+      --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --radius-sm: 8px; --radius-md: 12px; --radius-full: 9999px;
+    }
+    body { font-family: var(--font-body); font-size: 16px; line-height: 1.6; color: var(--text); background: var(--bg); -webkit-font-smoothing: antialiased; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    @media (min-width: 768px) { .container { padding: 0 40px; } }
+
+    /* NAV — light variant */
+    .nav { --nav-bg: rgba(255,255,255,0.88); --nav-border: rgba(0,0,0,0.08); --nav-text: #555; --nav-text-hover: #111; --nav-active-bg: rgba(0,0,0,0.06); --nav-brand-color: #111; --nav-toggle-color: #111; padding: 16px 0; position: sticky; top: 0; z-index: 100; background: var(--nav-bg); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--nav-border); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 48px; }
+    .nav-brand { display: flex; align-items: center; gap: 10px; }
+    .nav-icon { width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; color: var(--nav-brand-color); }
+    .nav-brand-text { font-size: 16px; font-weight: 700; color: var(--nav-brand-color); letter-spacing: -0.01em; }
+    .nav-links { display: none; align-items: center; gap: 4px; }
+    @media (min-width: 768px) { .nav-links { display: flex; } }
+    .nav-links a { font-size: 13px; font-weight: 500; color: var(--nav-text); padding: 7px 14px; border-radius: var(--radius-full); transition: color 200ms var(--ease-out), background 200ms var(--ease-out); }
+    .nav-links a:hover { color: var(--nav-text-hover); background: var(--nav-active-bg); }
+    .nav-links a.active { color: var(--nav-text-hover); background: var(--nav-active-bg); font-weight: 600; }
+    .nav-cta { display: inline-flex; align-items: center; justify-content: center; height: 40px; padding: 0 20px; background: var(--dark); color: #fff; font-size: 13px; font-weight: 600; border-radius: var(--radius-full); transition: opacity 200ms var(--ease-out), transform 200ms var(--ease-out); }
+    .nav-cta:hover { opacity: 0.85; transform: translateY(-1px); }
+    .nav-toggle { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; color: var(--nav-toggle-color); border-radius: var(--radius-sm); }
+    @media (min-width: 768px) { .nav-toggle { display: none; } }
+
+    .mobile-menu { display: none; position: fixed; inset: 0; z-index: 200; background: rgba(255,255,255,0.97); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); flex-direction: column; padding: 24px; }
+    .mobile-menu.is-open { display: flex; }
+    .mobile-menu-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 48px; }
+    .mobile-menu-close { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; color: #999; border-radius: var(--radius-full); }
+    .mobile-menu-links { display: flex; flex-direction: column; gap: 4px; }
+    .mobile-menu-links a { font-size: 20px; font-weight: 500; color: #555; padding: 16px 20px; border-radius: var(--radius-md); transition: color 200ms, background 200ms; }
+    .mobile-menu-links a:hover { color: #111; background: rgba(0,0,0,0.04); }
+    .mobile-menu-links a.active { color: #111; background: rgba(0,0,0,0.06); font-weight: 600; }
+    .mobile-menu-cta { margin-top: auto; display: flex; align-items: center; justify-content: center; height: 52px; background: var(--dark); color: #fff; font-size: 15px; font-weight: 600; border-radius: var(--radius-full); }
+
+    /* PLACEHOLDER */
+    .placeholder { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 70vh; text-align: center; padding: 48px 24px; }
+    .placeholder h1 { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3rem); font-weight: 400; margin-bottom: 16px; color: #111; }
+    .placeholder p { font-size: 17px; color: #555; max-width: 440px; }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-brand"><div class="nav-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div class="nav-brand-text">CreatorCommerce</div></a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="gamer.html">Shop via Discord</a>
+          <a href="creator-storefront.html">Launch Your Store</a>
+          <a href="discord-communities.html" class="active">Monetize Your Server</a>
+        </div>
+        <a href="index.html#waitlist" class="nav-cta">Get started</a>
+        <button class="nav-toggle" onclick="openMobileMenu()" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <a href="index.html" class="nav-brand"><div class="nav-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div class="nav-brand-text">CreatorCommerce</div></a>
+      <button class="mobile-menu-close" onclick="closeMobileMenu()" aria-label="Close menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <div class="mobile-menu-links">
+      <a href="index.html">Home</a>
+      <a href="gamer.html">Gamer</a>
+      <a href="creator-storefront.html">Creator Storefront</a>
+      <a href="discord-communities.html" class="active">Discord Communities</a>
+    </div>
+    <a href="index.html#waitlist" class="mobile-menu-cta" onclick="closeMobileMenu()">Get started</a>
+  </div>
+
+  <div class="placeholder">
+    <h1>Discord Communities</h1>
+    <p>Turn your Discord server into a revenue channel. Members buy game codes — you earn commission.</p>
+  </div>
+
+  <script>
+    function openMobileMenu() { document.getElementById('mobileMenu').classList.add('is-open'); document.body.style.overflow = 'hidden'; }
+    function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('is-open'); document.body.style.overflow = ''; }
+  </script>
+</body>
+</html>
