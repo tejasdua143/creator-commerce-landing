@@ -138,16 +138,7 @@
     }
     .nav-links a:hover { color: var(--nav-text-hover); background: var(--nav-active-bg); }
     .nav-links a.active { color: var(--nav-text-hover); background: var(--nav-active-bg); font-weight: 600; }
-    .nav-cta {
-      display: inline-flex; align-items: center; justify-content: center;
-      height: 40px; padding: 0 20px;
-      background: var(--accent); color: var(--text-inverse);
-      font-size: 13px; font-weight: 600;
-      border-radius: var(--radius-full);
-      transition: background 200ms var(--ease-out), transform 200ms var(--ease-out);
-    }
-    .nav-cta:hover { background: var(--accent-hover); transform: translateY(-1px); }
-    .nav-cta:active { transform: translateY(0); }
+    /* old nav-cta overridden by .cc-nav-root .nav-cta */
 
     /* Hamburger toggle */
     .nav-toggle {
