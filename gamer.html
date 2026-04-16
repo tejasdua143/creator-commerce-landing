@@ -55,10 +55,149 @@
     .mobile-menu-links a.active { color: var(--text); background: rgba(255,255,255,0.08); font-weight: 600; }
     .mobile-menu-cta { margin-top: auto; display: flex; align-items: center; justify-content: center; height: 52px; background: var(--accent); color: var(--text-inverse); font-size: 15px; font-weight: 600; border-radius: var(--radius-full); }
 
-    /* PLACEHOLDER */
-    .placeholder { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 70vh; text-align: center; padding: 48px 24px; }
-    .placeholder h1 { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3rem); font-weight: 400; margin-bottom: 16px; }
-    .placeholder p { font-size: 17px; color: var(--text-secondary); max-width: 440px; }
+    /* HERO */
+    .hero {
+      padding: 64px 0 80px;
+    }
+    .hero-grid {
+      display: grid;
+      gap: 48px;
+      align-items: center;
+    }
+    @media (min-width: 900px) { .hero-grid { grid-template-columns: 1fr 1.2fr; gap: 64px; } }
+    .hero-text h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      font-weight: 400;
+      line-height: 1.12;
+      letter-spacing: -0.01em;
+      margin-bottom: 20px;
+    }
+    .hero-text h1 .accent { color: var(--accent); }
+    .hero-text p {
+      font-size: 16px; line-height: 1.7;
+      color: var(--text-secondary);
+      max-width: 420px;
+      margin-bottom: 32px;
+    }
+    .hero-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      height: 48px; padding: 0 28px;
+      background: var(--accent); color: var(--text-inverse);
+      font-size: 14px; font-weight: 600;
+      border-radius: var(--radius-full);
+      transition: background 200ms var(--ease-out), transform 200ms var(--ease-out);
+    }
+    .hero-btn:hover { background: var(--accent-hover); transform: translateY(-1px); }
+
+    /* MOCK BROWSER */
+    .mock-browser {
+      background: #1E1E30;
+      border: 1px solid rgba(198,241,53,0.1);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 0 80px rgba(198,241,53,0.05), 0 24px 48px rgba(0,0,0,0.4);
+    }
+    .mock-bar {
+      display: flex; align-items: center; gap: 12px;
+      padding: 10px 14px;
+      background: #252540;
+      border-bottom: 1px solid var(--border);
+    }
+    .mock-dots { display: flex; gap: 6px; }
+    .mock-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .mock-dot.r { background: #FF5F57; }
+    .mock-dot.y { background: #FFBD2E; }
+    .mock-dot.g { background: #28C840; }
+    .mock-url {
+      flex: 1; text-align: center;
+      background: #2C2C48; padding: 5px 14px;
+      border-radius: 6px; color: var(--text-secondary);
+      font-weight: 600; font-size: 11px; letter-spacing: 0.04em;
+    }
+    .mock-url svg { display: inline-block; vertical-align: -2px; margin-right: 6px; }
+    .mock-bar-icons { display: flex; gap: 10px; color: var(--text-muted); }
+    .mock-body { padding: 0; }
+    .mock-avatar-row {
+      display: flex; align-items: center; gap: 10px;
+      padding: 14px 16px;
+    }
+    .mock-av {
+      width: 44px; height: 44px;
+      background: #2C2C48; border: 2px solid var(--surface);
+      border-radius: 8px; display: flex; align-items: center; justify-content: center;
+      color: var(--text-muted); flex-shrink: 0;
+    }
+    .mock-av-name { font-size: 13px; font-weight: 600; color: var(--text); }
+    .mock-av-edit {
+      margin-left: auto; font-size: 10px; padding: 4px 10px;
+      border: 1px solid var(--border); border-radius: 4px;
+      color: var(--text-muted); background: #252540;
+    }
+    .mock-tabs {
+      display: flex; align-items: center; gap: 16px;
+      padding: 12px 16px 8px; font-size: 12px; font-weight: 600;
+    }
+    .mock-tabs span { color: var(--text-muted); }
+    .mock-tabs span:first-child { color: var(--text); }
+    .mock-tabs .va { margin-left: auto; font-weight: 400; font-size: 11px; }
+    .mock-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 10px; padding: 10px 16px 20px;
+    }
+    .mock-card { background: #252540; border-radius: 8px; overflow: hidden; }
+    .mock-card-img { height: 80px; display: flex; align-items: center; justify-content: center; }
+    .mock-card-img img { width: 36px; height: 36px; }
+    .mock-card-info { padding: 8px 10px 10px; }
+    .mock-card-name {
+      font-size: 11px; font-weight: 700; color: var(--text);
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    }
+    .mock-card-sub { font-size: 10px; color: var(--text-muted); margin-top: 2px; }
+    .mock-card-price {
+      display: inline-block; background: var(--accent); color: var(--text-inverse);
+      font-size: 10px; font-weight: 700; padding: 2px 8px;
+      border-radius: 4px; margin-top: 5px;
+    }
+    @media (max-width: 640px) {
+      .mock-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* CTA SECTION */
+    .cta-section {
+      padding: 0 24px 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    @media (min-width: 768px) { .cta-section { padding: 0 40px 80px; } }
+    .cta-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 48px 32px;
+    }
+    .cta-box h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3.5vw, 2rem);
+      font-weight: 400;
+      margin-bottom: 12px;
+    }
+    .cta-box p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      max-width: 420px;
+      margin: 0 auto 28px;
+    }
+    .cta-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      height: 48px; padding: 0 28px;
+      background: var(--accent); color: var(--text-inverse);
+      font-size: 14px; font-weight: 600;
+      border-radius: var(--radius-full);
+      transition: background 200ms var(--ease-out), transform 200ms var(--ease-out);
+    }
+    .cta-btn:hover { background: var(--accent-hover); transform: translateY(-1px); }
   </style>
 </head>
 <body>
@@ -93,10 +232,85 @@
     <a href="index.html#waitlist" class="mobile-menu-cta" onclick="closeMobileMenu()">Get started</a>
   </div>
 
-  <div class="placeholder">
-    <h1>Gamer</h1>
-    <p>Add CreatorCommerce to your Discord DM. Buy game codes and gift cards from your favorite creators.</p>
-  </div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <h1>Buy game codes from creators <span class="accent">you already follow.</span></h1>
+          <p>Your favorite gaming creator's storefront — game codes &amp; gift cards, delivered instantly via Discord.</p>
+          <a href="index.html#waitlist" class="hero-btn">Start shopping</a>
+        </div>
+        <div class="hero-visual">
+          <div class="mock-browser">
+            <div class="mock-bar">
+              <div class="mock-dots"><span class="mock-dot r"></span><span class="mock-dot y"></span><span class="mock-dot g"></span></div>
+              <div class="mock-url"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>YOUR_BRAND.GG</div>
+              <div class="mock-bar-icons">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 11-6.219-8.56"/></svg>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              </div>
+            </div>
+            <div class="mock-body">
+              <div class="mock-avatar-row">
+                <div class="mock-av"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+                <div class="mock-av-name">Your Influencer Store</div>
+                <div class="mock-av-edit">Customize</div>
+              </div>
+              <div class="mock-tabs">
+                <span>Game Codes</span>
+                <span class="va">View all</span>
+                <span>Gift Cards</span>
+              </div>
+              <div class="mock-grid">
+                <div class="mock-card">
+                  <div class="mock-card-img" style="background:#1B2838"><img src="https://cdn.simpleicons.org/steam/fff" alt="Steam" width="36" height="36"></div>
+                  <div class="mock-card-info">
+                    <div class="mock-card-name">Steam Card</div>
+                    <div class="mock-card-sub">Gift Card</div>
+                    <div class="mock-card-price">&#8377;500</div>
+                  </div>
+                </div>
+                <div class="mock-card">
+                  <div class="mock-card-img" style="background:#003087"><img src="https://cdn.simpleicons.org/playstation/fff" alt="PlayStation" width="36" height="36"></div>
+                  <div class="mock-card-info">
+                    <div class="mock-card-name">PS Plus</div>
+                    <div class="mock-card-sub">Gift Card</div>
+                    <div class="mock-card-price">&#8377;799</div>
+                  </div>
+                </div>
+                <div class="mock-card">
+                  <div class="mock-card-img" style="background:#FD4556"><img src="https://cdn.simpleicons.org/valorant/fff" alt="Valorant" width="36" height="36"></div>
+                  <div class="mock-card-info">
+                    <div class="mock-card-name">Valorant</div>
+                    <div class="mock-card-sub">Gift Card</div>
+                    <div class="mock-card-price">&#8377;399</div>
+                  </div>
+                </div>
+                <div class="mock-card">
+                  <div class="mock-card-img" style="background:#DB3236"><img src="https://cdn.simpleicons.org/ea/fff" alt="EA" width="36" height="36"></div>
+                  <div class="mock-card-info">
+                    <div class="mock-card-name">EA Play</div>
+                    <div class="mock-card-sub">Gift Card</div>
+                    <div class="mock-card-price">&#8377;499</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-box">
+      <h2>Buy from creators you trust</h2>
+      <p>Add CreatorCommerce to your Discord DM. Get game codes and gift cards delivered instantly.</p>
+      <a href="index.html#waitlist" class="cta-btn">Get started</a>
+    </div>
+  </section>
 
   <script>
     function openMobileMenu() { document.getElementById('mobileMenu').classList.add('is-open'); document.body.style.overflow = 'hidden'; }
